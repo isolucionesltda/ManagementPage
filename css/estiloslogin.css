@@ -1,4 +1,4 @@
-body {
+.registrar{
     font-family: Arial, Helvetica, sans-serif; /* Definir las fuentes que se van a utilizar*/
     margin: 0;
     background: url(../imagenes/Buscando.jpg);
@@ -21,7 +21,7 @@ body {
     padding: 3px;
 }
 
-h1 {
+.register {
     text-align: center;/* Centrar el titulo*/
     color: #1a2537;
     font-size: 40px;/* Tamaño de letra*/
@@ -61,17 +61,17 @@ input[type="password"] { /* Con la coma se puede poner estilos a ambos tipos de 
     background: cadetblue;
 }
 
-p {
+.parrafo{
     text-align: center;
 }
 
-.link {
+.link__login{
     text-decoration: none;
     color: #1a2537;
     font-weight: 600;
 }
 
-.link:hover {
+.link__login:hover {
     color: cadetblue;
 }
 
