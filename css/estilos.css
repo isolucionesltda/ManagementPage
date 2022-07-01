@@ -59,9 +59,10 @@ input[type="password"] { /* Con la coma se puede poner estilos a ambos tipos de 
 }
 input[type="text"], input[type="password"] {
     font-size: 20px;
-    width: 82%;
+    width: 87%;
     padding-left: 50px;
     border: 1px solid;
+    display: flex;
     
 }
 
