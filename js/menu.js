@@ -11,7 +11,8 @@
         menu.classList.remove('nav__link--show');
     });
 
-    
-
-
+   
 })();
+function changeview() {
+    open("./indexcrud.html");
+}
