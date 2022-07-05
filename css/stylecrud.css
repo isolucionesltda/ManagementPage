@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.crud{
+body {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -16,18 +16,18 @@
   background-color: rgba(0,0,0,0.1);
 }
 
-.button__crud {
+button {
   cursor: pointer;
 }
 
-.tabla {
+.container {
   width: 90%;
   height: 80%;
   border-radius: 10px;
   background: white;
 }
 
-.tabla__header {
+.header {
   min-height: 70px;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
   margin: auto 12px;
 }
 
-.tabla__header span {
+.header span {
   font-weight: 900;
   font-size: 20px;
   word-break: break-all;
@@ -50,69 +50,69 @@
   background-color: rgb(57, 57, 226);
 }
 
-.tabla__divtabla {
+.divTable {
   padding: 10px;
   width: auto; 
   height:inherit; 
   overflow:auto;
 }
 
-.tabla__divtabla::-webkit-scrollbar {
+.divTable::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke; 
 }
 
-.tabla__divtabla::-webkit-scrollbar-thumb {
+.divTable::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: darkgray; 
 }
 
-.tabla__crud {
+table {
   width: 100%;
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
 }
 
-.thead__crud {
+thead {
   background-color: whitesmoke;
 }
 
-.tr__crud {
+tr {
   border-bottom: 1px solid rgb(238, 235, 235)!important;
 }
 
-.tbody__crud .tr__crud td {
+tbody tr td {
   vertical-align: text-top;
   padding: 6px;
   max-width: 50px;
 }
 
-.thead__crud .tr__crud th {
+thead tr th {
   padding: 5px;
   text-align: start;
   margin-bottom: 50px;
 }
 
-.tbody__crud .tr__crud {
+tbody tr {
   margin-bottom: 50px;
 }
 
-.thead__crud .tr__crud th.tabla__divtabla__columna {
+thead tr th.acao {
   width: 100px!important;
   text-align: center;
 }
 
-.tbody__crud .tr__crud td.tabla__divtabla__columna {
+tbody tr td.acao {
   text-align: center;
 }
 
 @media (max-width: 700px) {
-  .crud {
+  body {
     font-size: 10px;
   }
   
-  .tabla__header span {
+  .header span {
     font-size: 15px;
   }
 
@@ -121,23 +121,23 @@
     font-size: 10px;
   }
 
-  .thead__crud .tr__crud th.tabla__divtabla__columna {
+  thead tr th.acao {
     width: auto!important;
   }
   
-  td .button__crud i {
+  td button i {
     font-size: 20px!important;
   }
 
-  td .button__crud i:first-child {
+  td button i:first-child {
     margin-right: 0;
   }
 
-.modal {
+  .modal {
     width: 90%!important;
   }
 
-.modal label {
+  .modal label {
     font-size: 12px!important;
   }
 }
@@ -181,7 +181,7 @@
   border-right: none;
 }
 
-.modal .button__crud {
+.modal button {
   width: 100%;
   margin: 10px auto;
   outline: none;
@@ -212,16 +212,16 @@
   }
 }
 
-td .button__crud {
+td button {
   border: none;
   outline: none;
   background: transparent;
 }
 
-td .button__crud i {
+td button i {
   font-size: 25px;
 }
 
-td .button__crud i:first-child {
+td button i:first-child {
   margin-right: 10px;
 }

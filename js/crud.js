@@ -1,92 +1,92 @@
 const modal = document.querySelector('.modal-container')
-const tbody__crud = document.querySelector('tbody__crud')
-const snombre = document.querySelector('#m-nombre')
-const scargo = document.querySelector('#m-cargo')
-const ssueldo = document.querySelector('#m-sueldo')
-const btnguardar = document.querySelector('#btnguardar')
+const tbody = document.querySelector('tbody')
+const sNombre = document.querySelector('#m-nombre')
+const sCargo = document.querySelector('#m-cargo')
+const sSueldo = document.querySelector('#m-sueldo')
+const btnGuardar = document.querySelector('#btnGuardar')
 
 let itens
 let id
 
 function openModal(edit = false, index = 0) {
-    modal.classList.add('active')
+  modal.classList.add('active')
 
-    modal.onclick = e => {
-        if (e.target.className.indexOf('modal-container') !== -1) {
-            modal.classList.remove('active')
-        }
+  modal.onclick = e => {
+    if (e.target.className.indexOf('modal-container') !== -1) {
+      modal.classList.remove('active')
     }
+  }
 
-    if (edit) {
-        snombre.value = itens[index].nombre
-        scargo.value = itens[index].cargo
-        ssueldo.value = itens[index].sueldo
-        id = index
-    } else {
-        snombre.value = ''
-        scargo.value = ''
-        ssueldo.value = ''
-    }
-
+  if (edit) {
+    sNombre.value = itens[index].nombre
+    sCargo.value = itens[index].cargo
+    sSueldo.value = itens[index].sueldo
+    id = index
+  } else {
+    sNombre.value = ''
+    sCargo.value = ''
+    sSueldo.value = ''
+  }
+  
 }
 
 function editItem(index) {
 
-    openModal(true, index)
+  openModal(true, index)
 }
 
 function deleteItem(index) {
-    itens.splice(index, 1)
-    setItensBD()
-    loadItens()
+  itens.splice(index, 1)
+  setItensBD()
+  loadItens()
 }
 
 function insertItem(item, index) {
-    let tr__crud = document.createElement('tr')
+  let tr = document.createElement('tr')
 
-    tr__crud.innerHTML = `
-    <td>${item.nome}</td>
-    <td>${item.funcao}</td>
-    <td>R$ ${item.salario}</td>
-    <td class="tabla__divtabla__columna">
+  tr.innerHTML = `
+    <td>${item.nombre}</td>
+    <td>${item.cargo}</td>
+    <td>R$ ${item.sueldo}</td>
+    <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
     </td>
-    <td class="tabla__divtabla__columna">
+    <td class="acao">
       <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
     </td>
   `
-    tbody__crud.appendChild(tr__crud)
+  tbody.appendChild(tr)
 }
 
-btnguardar.onclick = e => {
+btnGuardar.onclick = e => {
+  
+  if (sNombre.value == '' || sCargo.value == '' || sSueldo.value == '') {
+    return
+  }
 
-    if (snombre.value == '' || scargo.value == '' || ssueldo.value == '') {
-        return
-    }
+  e.preventDefault();
 
-    e.preventDefault();
+  if (id !== undefined) {
+    itens[id].nombre = sNombre.value
+    itens[id].cargo = sCargo.value
+    itens[id].sueldo = sSueldo.value
+  } else {
+    itens.push({'nombre': sNombre.value, 'cargo': sCargo.value, 'sueldo': sSueldo.value})
+  }
 
-    if (id !== undefined) {
-        itens[id].nombre = sNome.value
-        itens[id].cargo = sFuncao.value
-        itens[id].sueldo = sSalario.value
-    } else {
-        itens.push({ 'nombre': snombre.value, 'cargo': scargo.value, 'sueldo': ssueldo.value })
-    }
+  setItensBD()
 
-    setItensBD()
-
-    modal.classList.remove('active')
-    loadItens()
-    id = undefined
+  modal.classList.remove('active')
+  loadItens()
+  id = undefined
 }
 
 function loadItens() {
-    itens = getItensBD()
-    tbody__crud.innerHTML = ''
-    itens.forEach((item, index) => {
-        insertItem(item, index)
-    })
+  itens = getItensBD()
+  tbody.innerHTML = ''
+  itens.forEach((item, index) => {
+    insertItem(item, index)
+  })
 
 }
 
