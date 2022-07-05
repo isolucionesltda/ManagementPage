@@ -6,21 +6,87 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001A49;
+  /*Son las custom properties*/
+}
 
-body {
+.table__container {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* nav comienza aquí */
+.herologin {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 800px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  color: #1a2537;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: url(../imagenes/Buscando.jpg);
+  background-size: cover;
+  /* Permite cubrir la pantalla con una sola imagen*/
+  background-attachment: fixed;
+}
+
+.container__paracrud {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+  /*Las caracteristicas de cada contenedor*/
+}
+.nav {
+  --padding-container: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  margin-left: auto;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 2em;
+}
+
+.nav__items {
+  list-style: none;
+  /*Para que no sea visible el estilo de las listas por defecto*/
+}
+
+.nav__links {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__links__begin {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* nav termina aquí */
 button {
   cursor: pointer;
 }
 
-.container {
+.container__crud {
   width: 90%;
   height: 80%;
   border-radius: 10px;
@@ -52,19 +118,19 @@ button {
 
 .divTable {
   padding: 10px;
-  width: auto; 
-  height:inherit; 
-  overflow:auto;
+  width: auto;
+  height: inherit;
+  overflow: auto;
 }
 
 .divTable::-webkit-scrollbar {
   width: 12px;
-  background-color: whitesmoke; 
+  background-color: whitesmoke;
 }
 
 .divTable::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: darkgray; 
+  background-color: darkgray;
 }
 
 table {
@@ -79,7 +145,7 @@ thead {
 }
 
 tr {
-  border-bottom: 1px solid rgb(238, 235, 235)!important;
+  border-bottom: 1px solid rgb(238, 235, 235) !important;
 }
 
 tbody tr td {
@@ -99,7 +165,7 @@ tbody tr {
 }
 
 thead tr th.acao {
-  width: 100px!important;
+  width: 100px !important;
   text-align: center;
 }
 
@@ -107,11 +173,30 @@ tbody tr td.acao {
   text-align: center;
 }
 
+@media (max-width:800px) {
+  .nav__link--menu {
+    position: fixed;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: .7s opacity;
+  }
+}
+
 @media (max-width: 700px) {
   body {
     font-size: 10px;
   }
-  
+
   .header span {
     font-size: 15px;
   }
@@ -122,11 +207,11 @@ tbody tr td.acao {
   }
 
   thead tr th.acao {
-    width: auto!important;
+    width: auto !important;
   }
-  
+
   td button i {
-    font-size: 20px!important;
+    font-size: 20px !important;
   }
 
   td button i:first-child {
@@ -134,15 +219,15 @@ tbody tr td.acao {
   }
 
   .modal {
-    width: 90%!important;
+    width: 90% !important;
   }
 
   .modal label {
-    font-size: 12px!important;
+    font-size: 12px !important;
   }
 }
 
-.modal-container {
+.modal-container__crud {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -173,7 +258,7 @@ tbody tr td.acao {
 .modal input {
   width: 100%;
   outline: none;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   width: 100%;
   margin-bottom: 20px;
   border-top: none;
@@ -185,8 +270,8 @@ tbody tr td.acao {
   width: 100%;
   margin: 10px auto;
   outline: none;
-  border-radius: 20px; 
-  padding: 5px 10px; 
+  border-radius: 20px;
+  padding: 5px 10px;
   width: 100%;
   border: none;
   background-color: rgb(57, 57, 226);
@@ -206,6 +291,7 @@ tbody tr td.acao {
     opacity: 0;
     transform: translate3d(0, -60px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);

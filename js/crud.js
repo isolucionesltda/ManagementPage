@@ -1,4 +1,4 @@
-const modal = document.querySelector('.modal-container')
+const modal = document.querySelector('.modal-container__crud')
 const tbody = document.querySelector('tbody')
 const sNombre = document.querySelector('#m-nombre')
 const sCargo = document.querySelector('#m-cargo')
@@ -12,7 +12,7 @@ function openModal(edit = false, index = 0) {
   modal.classList.add('active')
 
   modal.onclick = e => {
-    if (e.target.className.indexOf('modal-container') !== -1) {
+    if (e.target.className.indexOf('modal-container__crud') !== -1) {
       modal.classList.remove('active')
     }
   }

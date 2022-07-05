@@ -6,50 +6,79 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRUD</title>
+  <link rel="shortcut icon" href="./imagenes/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/stylecrud.css">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <span>Registro de empleados</span>
-      <button onclick="openModal()" id="new">Agregar</i></button>
-    </div>
-
-    <div class="divTable">
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Cargo</th>
-            <th>Sueldo</th>
-            <th class="acao">Editar</th>
-            <th class="acao">Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="modal-container">
-      <div class="modal">
-        <form>
-          <label for="m-nombre">Nombre</label>
-          <input id="m-nombre" type="text" required />
-  
-          <label for="m-cargo">Cargo</label>
-          <input id="m-cargo" type="text" required />
-  
-          <label for="m-sueldo">Sueldo</label>
-          <input id="m-sueldo" type="number" required />
-          <button id="btnGuardar">Guardar</button>
-        </form>
+  <header class="herologin">
+    <nav class="nav container__paracrud">
+      <div class="nav__logo">
+        <ul class="nav__link nav__link--menu">
+          <li class="nav__items">
+            <a href="./index.html" class="nav__links__begin">Quaesitor</a>
+          </li>
+        </ul>
       </div>
-    </div>
+      <ul class="nav__link nav__link--menu">
+        <li class="nav__items">
+            <a href="./index.html" class="nav__links">Inicio</a>
+        </li>
+        <li class="nav__items">
+            <a href="./index.html" class="nav__links">Acerca de</a>
+        </li>
+        <li class="nav__items">
+            <a href="./index.html" class="nav__links">Contacto</a>
+        </li>
+        <li class="nav__items">
+            <a href="loginvista.html" class="nav__links">Salir</a>
+        </li>
+    </ul>
+    </nav>
+    <section class="table__container">
+      <div class="container__crud">
+        <div class="header">
+          <span>Registro de empleados</span>
+          <button onclick="openModal()" id="new">Agregar</i></button>
+        </div>
 
-  </div>
+        <div class="divTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>Sueldo</th>
+                <th class="acao">Editar</th>
+                <th class="acao">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal-container__crud">
+          <div class="modal">
+            <form>
+              <label for="m-nombre">Nombre</label>
+              <input id="m-nombre" type="text" required />
+
+              <label for="m-cargo">Cargo</label>
+              <input id="m-cargo" type="text" required />
+
+              <label for="m-sueldo">Sueldo</label>
+              <input id="m-sueldo" type="number" required />
+              <button id="btnGuardar">Guardar</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </header>
   <script src="./js/crud.js"></script>
 </body>
 
