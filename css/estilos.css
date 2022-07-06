@@ -160,7 +160,6 @@ input[type="password"] {
     display: grid;
     grid-template-rows: 100px 1fr;
     color: #1a2537;
-    ;
 }
 
 /* Nav */
